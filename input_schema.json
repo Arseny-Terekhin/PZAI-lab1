@@ -1,0 +1,154 @@
+{
+  "description": "Вход модели оттока Telco (ЛР1, вариант 1). Одна строка — один клиент на дату среза.",
+  "target": {
+    "name": "Churn",
+    "positive": "Yes",
+    "output": "вероятность ухода; решение = proba >= threshold"
+  },
+  "threshold": 0.1,
+  "optional_columns": [
+    "customerID"
+  ],
+  "features": {
+    "gender": {
+      "type": "category",
+      "values": [
+        "Female",
+        "Male"
+      ]
+    },
+    "SeniorCitizen": {
+      "type": "integer",
+      "min": 0.0,
+      "max": 1.0,
+      "nullable": false
+    },
+    "Partner": {
+      "type": "category",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Dependents": {
+      "type": "category",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    "tenure": {
+      "type": "integer",
+      "min": 0.0,
+      "max": 72.0,
+      "nullable": false
+    },
+    "PhoneService": {
+      "type": "category",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    "MultipleLines": {
+      "type": "category",
+      "values": [
+        "No",
+        "No phone service",
+        "Yes"
+      ]
+    },
+    "InternetService": {
+      "type": "category",
+      "values": [
+        "DSL",
+        "Fiber optic",
+        "No"
+      ]
+    },
+    "OnlineSecurity": {
+      "type": "category",
+      "values": [
+        "No",
+        "No internet service",
+        "Yes"
+      ]
+    },
+    "OnlineBackup": {
+      "type": "category",
+      "values": [
+        "No",
+        "No internet service",
+        "Yes"
+      ]
+    },
+    "DeviceProtection": {
+      "type": "category",
+      "values": [
+        "No",
+        "No internet service",
+        "Yes"
+      ]
+    },
+    "TechSupport": {
+      "type": "category",
+      "values": [
+        "No",
+        "No internet service",
+        "Yes"
+      ]
+    },
+    "StreamingTV": {
+      "type": "category",
+      "values": [
+        "No",
+        "No internet service",
+        "Yes"
+      ]
+    },
+    "StreamingMovies": {
+      "type": "category",
+      "values": [
+        "No",
+        "No internet service",
+        "Yes"
+      ]
+    },
+    "Contract": {
+      "type": "category",
+      "values": [
+        "Month-to-month",
+        "One year",
+        "Two year"
+      ]
+    },
+    "PaperlessBilling": {
+      "type": "category",
+      "values": [
+        "No",
+        "Yes"
+      ]
+    },
+    "PaymentMethod": {
+      "type": "category",
+      "values": [
+        "Bank transfer (automatic)",
+        "Credit card (automatic)",
+        "Electronic check",
+        "Mailed check"
+      ]
+    },
+    "MonthlyCharges": {
+      "type": "number",
+      "min": 18.4,
+      "max": 118.75,
+      "nullable": false
+    },
+    "TotalCharges": {
+      "type": "number (строка допускается, пустая строка = 0 при tenure = 0)",
+      "min": 0.0,
+      "max": 8684.8,
+      "nullable": true
+    }
+  }
+}
